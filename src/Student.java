@@ -33,4 +33,10 @@ public class Student extends Person
         this.gpa = gpa;
     }
 
+    public String toString() {
+        String ans = super.toString();
+        return ans.substring(0, ans.length() - 1) +
+                ", grade: " + grade + ", gpa: " + gpa + "\n";
+    }
+
 }
