@@ -55,4 +55,14 @@ public class Person
     public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
     }
+
+    // overridden methods
+    // These methods override the toString an equals methods
+    //  in the Object class
+    public String toString() {
+        String ans = getClass().getName() + ", id: " + id
+                + ", name: " + name
+                + ", birthday: " + birthDay + "\n";
+        return ans;
+    }
 }
