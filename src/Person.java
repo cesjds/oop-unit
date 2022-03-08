@@ -65,4 +65,15 @@ public class Person
                 + ", birthday: " + birthDay + "\n";
         return ans;
     }
+
+    public boolean equals(Object o) {
+        return id.equals(((Person)o).getId());
+        //return (compareTo((Person) o) == 0);
+    }
+
+    // This implements the compareTo method in the
+    //  comparable interface
+    public int compareTo(Person p) {
+        return id.compareTo(p.getId());
+    }
 }
