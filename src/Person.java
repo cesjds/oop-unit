@@ -1,4 +1,4 @@
-public class Person
+public class Person implements Comparable<Person>
 {
     // instance attributes
     // These are values that describe an instance of this class.
