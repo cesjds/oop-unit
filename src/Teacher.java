@@ -8,7 +8,7 @@ public class Teacher extends Person
         salary = 0;
     }
 
-    public Teacher(String id, String n, String bd, int s)
+    public Teacher(String id, String n, String bd, double s)
     {
         super(id, n, bd);
         setSalary(s);
@@ -16,9 +16,10 @@ public class Teacher extends Person
     public double getSalary() {
         return this.salary;
     }
-    public void setSalary(int salary) {
-        if(salary < 0)
+    public void setSalary(double salary) {
+        if(salary < 0.0)
             throw new IllegalArgumentException("Invalid salary for teacher " + super.getSalary());
+        this.salary = salary;
     }
 
     public String toString() {
