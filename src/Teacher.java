@@ -18,7 +18,7 @@ public class Teacher extends Person
     }
     public void setSalary(double salary) {
         if(salary < 0.0)
-            throw new IllegalArgumentException("Invalid salary for teacher " + super.getSalary());
+            throw new IllegalArgumentException("Invalid salary for teacher " + salary);
         this.salary = salary;
     }
 

@@ -15,6 +15,7 @@ public class PersonRunner
         //JOptionPane.showMessageDialog(null, s1);
         people.add(p1);
         people.add(s1);
+        people.add(t1);
 
         people.add(new Student("99999", "Moshe", "04/07/2006", 10, 4.0));
         people.add(new Person("1111", "Izzy", "08/15/2022"));
