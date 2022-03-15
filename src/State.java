@@ -64,7 +64,7 @@ public class State implements Comparable<State>
         this.statePopulation = statePopulation;
     }
 
-    
+
     public String toString() {
         String ans = "State Name: " + stateName + ", State Capital: " + stateCapital + ", State Flower: " +
                 stateFlower + ", State Bird: " + stateBird + ", State Population: " + statePopulation + "\n";
