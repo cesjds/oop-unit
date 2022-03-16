@@ -1,0 +1,51 @@
+        /*
+        State s1 = new State("Maryland", "Annapolis", "Black-eyed Susan", "Cardinal", 4356);
+        State s2 = new State();
+        State s3 = new State();
+
+        // Testing equals()
+        JOptionPane.showMessageDialog(null, "Testing equals(), it should be");
+        JOptionPane.showMessageDialog(null, "Testing equals(), it should be");
+
+
+        //Testing constructors and toString()
+        Person p1 = new Person("2345", "Marry", "05/20/1938");
+        Person p2 = new Person();
+        JOptionPane.showMessageDialog(null, "Testing the parameter constructor:\n" + p1);
+        JOptionPane.showMessageDialog(null, "Testing the default constructor:\n" + p2);
+
+        //Testing setters
+        p2.setName("Bob");
+        p2.setBirthDay("1/1/1999");
+        p2.setId("5678");
+        JOptionPane.showMessageDialog(null, "Testing setters: " + p2);
+
+        //Testing getters
+        JOptionPane.showMessageDialog(null, "Testing getName(): " + p1.getName());
+        JOptionPane.showMessageDialog(null, "Testing getId(): " + p1.getId());
+        JOptionPane.showMessageDialog(null, "Testing getBirthDay(): " + p1.getBirthDay());
+
+        //Testing compareTo()
+        JOptionPane.showMessageDialog(null, "Testing compareTo, it should be -3: " + p1.compareTo(p2));
+        JOptionPane.showMessageDialog(null, "Testing compareTo, it should be 3: " + p2.compareTo(p1));
+        JOptionPane.showMessageDialog(null, "Testing compareTo, it should be 0: " + p1.compareTo(p1));
+
+        // Testing equals()
+        JOptionPane.showMessageDialog(null, "Testing equals(), it should be false: " + p1.equals(p2));
+        JOptionPane.showMessageDialog(null, "Testing equals(), it should be true: " + p2.equals(p2));
+        */
+
+
+
+        /*
+        enhanced or for/each loops to use in your new
+        State database class NOT you StateTeacher class:
+
+        for (int i = 0; i < list.size(); i++) {
+            State s = list.get(i);
+            s.toString();
+        }
+
+        for(State s: states) //states is an ArrayList of states
+            s.toString();
+        */
