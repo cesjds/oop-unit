@@ -1,3 +1,7 @@
+// Yoav Amit
+// March 19, 2022
+// Computer Programming II
+
 import javax.swing.*;
 import java.util.ArrayList;
 
