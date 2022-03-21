@@ -1,3 +1,8 @@
+// Yoav Amit
+// March 21, 2022
+// Ms. Steelman
+// Period 1
+
 public class State implements Comparable<State>
 {
     private String stateName;
@@ -61,9 +66,14 @@ public class State implements Comparable<State>
     }
 
     public void setStatePopulation(int statePopulation) {
-        this.statePopulation = statePopulation;
+        if (statePopulation < 0)
+        {
+            IllegalArgumentException e = new IllegalArgumentException("Population can't be less than 0");
+            throw e;
+        }
+        else
+            this.statePopulation = statePopulation;
     }
-
 
     public String toString() {
         String ans = "State Name: " + stateName + ", State Capital: " + stateCapital + ", State Flower: " +
@@ -76,7 +86,7 @@ public class State implements Comparable<State>
         //return (compareTo((Person) o) == 0);
     }
 
-    public int compareTo(State p) {
-        return stateName.compareTo(p.getStateName());
+    public int compareTo(State s) {
+        return stateName.compareTo(s.getStateName());
     }
 }
