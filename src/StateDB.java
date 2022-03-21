@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,11 +7,7 @@ public class StateDB
     public static void main(String[] args) {
         ArrayList<State> states = new ArrayList<State>();
 
-        fillAray(State);
-    }
 
-    public static String[][] fillAray(String states[][])
-    {
         try {
             Scanner inFile = new Scanner(new File("data/states.txt"));
 
@@ -20,17 +15,12 @@ public class StateDB
             {
                 for (int r = 0; r < 51; r++)
                 {
-                    for (int c = 0; c < 5; c++)
-                    {
-                        states[r][c] = inFile.nextLine();
-                    }
+                    State s1 = new State(states[r][0]);
                 }
             }
             inFile.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return states;
     }
-
 }
