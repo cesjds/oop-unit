@@ -81,8 +81,8 @@ public class State implements Comparable<State>
         return ans;
     }
 
-    public boolean equals(Object o) {
-        return stateName.equals(((State)o).getStateName());
+    public boolean equals(Object s) {
+        return stateName.equals(((State)s).getStateName());
         //return (compareTo((Person) o) == 0);
     }
 

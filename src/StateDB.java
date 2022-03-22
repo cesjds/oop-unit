@@ -1,8 +1,8 @@
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /********************************************************************
  * Written by: Yoav Amit
@@ -26,26 +26,46 @@ import javax.swing.JTextArea;
 
 public class StateDB
 {
-    public static void print(ArrayList<State> states)
+    public static void main(String[] args)
     {
+        ArrayList<State> states = new ArrayList<State>();
+        fillArray(states);
+        printArray(states);
+
+        //State s1 = new State(sn,sc,sf,sb,sp);
+    }
+    public static ArrayList<State> fillArray(ArrayList<State> states) {
+        try {
+            Scanner inFile = new Scanner(new File("data/states.txt"));
+            while (inFile.hasNext()) {
+                //
+                // READING AND FILLING THE ARRAYLIST
+                //
+            }
+            inFile.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return states;
+    }
+    public static void printArray(ArrayList<State> states) {
         JTextArea area = new JTextArea();
         //append column headings here
-        int spaces[] = new int[]{22, 18, 30, 30};
-
-        String name = "NAME", capital = "CAPITAL", flower = "FLOWER", bird = "BIRD", pop = "POPULATION";
-        for (State s: states) {
+        String name = ""; String capital = ""; String flower = ""; String bird = ""; int pop = 0;
+        for (State s : states) {
             //use the formatting notes and the area.append() method
             //to add each states name, capital, flower, bird and population.
         }
 
         area.setBackground(new Color(255,250,205));
         area.setForeground(new Color(0,0,0));
-        area.setFont(new Font("Consolas", Font.PLAIN, 15));
+        area.setFont(new Font("Andale Mono", Font.PLAIN, 15));
         // how many rows will show at one time
         area.setRows(35);
         // how many columns (1 char) will show at one time
         area.setColumns(115);
+
         JScrollPane pane = new JScrollPane(area);
-        JOptionPane.showMessageDialog(null,pane);
+        JOptionPane.showMessageDialog(null, pane);
     }
 }
