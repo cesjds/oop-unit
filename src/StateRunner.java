@@ -10,7 +10,7 @@ public class StateRunner
     public static void main(String[] args) {
         ArrayList<State> states = new ArrayList<State>();
 
-        State s1 = new State("Maryland","Annapolis","Black-eyed Susan","Cardinal",1000000);
+        State s1 = new State("Maryland","Annapolis","Cool Flower","AwesomeBird",1000000);
         State s2 = new State();
         //State s3 = new State("Maryland","Annapolis","Black-eyed Susan","Cardinal",-1);
 
