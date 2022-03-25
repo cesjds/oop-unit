@@ -38,6 +38,7 @@ public class StateDB
 
         //state.State s1 = new state.State(sn,sc,sf,sb,sp);
     }
+
     public static ArrayList<State> fillArray(ArrayList<State> states) {
         try {
             Scanner inFile = new Scanner(new File("data/states.txt"));
