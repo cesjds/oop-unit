@@ -1,3 +1,7 @@
+package person;
+
+import person.Person;
+
 public class Student extends Person
 {
     private int grade;

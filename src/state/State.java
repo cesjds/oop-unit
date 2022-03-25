@@ -1,4 +1,4 @@
-// Yoav Amit
+package state;// Yoav Amit
 // March 21, 2022
 // Ms. Steelman
 // Period 1
@@ -76,14 +76,14 @@ public class State implements Comparable<State>
     }
 
     public String toString() {
-        String ans = "State Name: " + stateName + ", State Capital: " + stateCapital + ", State Flower: " +
-                stateFlower + ", State Bird: " + stateBird + ", State Population: " + statePopulation + "\n";
+        String ans = "state.State Name: " + stateName + ", state.State Capital: " + stateCapital + ", state.State Flower: " +
+                stateFlower + ", state.State Bird: " + stateBird + ", state.State Population: " + statePopulation + "\n";
         return ans;
     }
 
     public boolean equals(Object s) {
         return stateName.equals(((State)s).getStateName());
-        //return (compareTo((Person) o) == 0);
+        //return (compareTo((person.Person) o) == 0);
     }
 
     public int compareTo(State s) {

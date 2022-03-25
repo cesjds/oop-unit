@@ -1,3 +1,5 @@
+package person;
+
 public class Person implements Comparable<Person>
 {
     // instance attributes
@@ -10,7 +12,7 @@ public class Person implements Comparable<Person>
     //private Date birthDay;
 
     // default constructor
-    // This is one way to declare an instance of the Person class.
+    // This is one way to declare an instance of the person.Person class.
     public Person()
     {
         id = "";
@@ -19,7 +21,7 @@ public class Person implements Comparable<Person>
     }
 
     // parameter constructor
-    // This is another way to declare an instance of the Person class.
+    // This is another way to declare an instance of the person.Person class.
     // We can send values for the attributes using parameters.
     public Person(String i, String n, String bD)
     {
@@ -68,7 +70,7 @@ public class Person implements Comparable<Person>
 
     public boolean equals(Object o) {
         return id.equals(((Person)o).getId());
-        //return (compareTo((Person) o) == 0);
+        //return (compareTo((person.Person) o) == 0);
     }
 
     // This implements the compareTo method in the

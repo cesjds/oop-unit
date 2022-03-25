@@ -1,3 +1,7 @@
+package state;
+
+import state.State;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -32,7 +36,7 @@ public class StateDB
         fillArray(states);
         printArray(states);
 
-        //State s1 = new State(sn,sc,sf,sb,sp);
+        //state.State s1 = new state.State(sn,sc,sf,sb,sp);
     }
     public static ArrayList<State> fillArray(ArrayList<State> states) {
         try {

@@ -1,8 +1,9 @@
-// Yoav Amit
+package state;// Yoav Amit
 // March 19, 2022
 // Computer Programming II
 
-import javax.swing.*;
+import state.State;
+
 import java.util.ArrayList;
 
 public class StateRunner
@@ -12,7 +13,7 @@ public class StateRunner
 
         State s1 = new State("Maryland","Annapolis","Cool Flower","AwesomeBird",1000000);
         State s2 = new State();
-        //State s3 = new State("Maryland","Annapolis","Black-eyed Susan","Cardinal",-1);
+        //state.State s3 = new state.State("Maryland","Annapolis","Black-eyed Susan","Cardinal",-1);
 
         System.out.println("Testing the Parameter Constructor: " + s1);
         System.out.println("Testing the Default Constructor: " + s2);

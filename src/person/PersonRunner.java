@@ -1,6 +1,9 @@
+package person;
+
+import person.Person;
+
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class PersonRunner

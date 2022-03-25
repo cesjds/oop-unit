@@ -1,3 +1,7 @@
+package person;
+
+import person.Person;
+
 public class Teacher extends Person
 {
     private double salary;
