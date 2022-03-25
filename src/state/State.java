@@ -1,7 +1,6 @@
-package state;// Yoav Amit
-// March 21, 2022
-// Ms. Steelman
-// Period 1
+package state;
+
+// Yoav Amit
 
 public class State implements Comparable<State>
 {

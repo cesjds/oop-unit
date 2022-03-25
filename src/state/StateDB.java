@@ -1,6 +1,6 @@
 package state;
 
-import state.State;
+// Yoav Amit
 
 import javax.swing.*;
 import java.awt.*;
