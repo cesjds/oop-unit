@@ -5,7 +5,6 @@ package state;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /********************************************************************
@@ -32,20 +31,24 @@ public class StateDB
 {
     public static void main(String[] args)
     {
-        ArrayList<State> states = new ArrayList<State>();
+        String states[][] = new String[51][5];
         fillArray(states);
         printArray(states);
 
         //state.State s1 = new state.State(sn,sc,sf,sb,sp);
     }
 
-    public static ArrayList<State> fillArray(ArrayList<State> states) {
+    public static String[][] fillArray(String[][] states) {
         try {
             Scanner inFile = new Scanner(new File("data/states.txt"));
             while (inFile.hasNext()) {
-                //
-                // READING AND FILLING THE ARRAYLIST
-                //
+                for (int r = 0; r < 51; r++)
+                {
+                    for (int c = 0; c < 5; c++)
+                    {
+                        states[r][c] = inFile.nextLine();
+                    }
+                }
             }
             inFile.close();
         } catch (Exception e) {
@@ -53,11 +56,11 @@ public class StateDB
         }
         return states;
     }
-    public static void printArray(ArrayList<State> states) {
+    public static void printArray(String[][] states) {
         JTextArea area = new JTextArea();
         //append column headings here
         String name = ""; String capital = ""; String flower = ""; String bird = ""; int pop = 0;
-        for (State s : states) {
+        for (String[] s : states) {
             //use the formatting notes and the area.append() method
             //to add each states name, capital, flower, bird and population.
         }
