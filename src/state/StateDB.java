@@ -5,6 +5,7 @@ package state;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /********************************************************************
@@ -31,23 +32,21 @@ public class StateDB
 {
     public static void main(String[] args)
     {
-        String states[][] = new String[51][5];
+        ArrayList states = new ArrayList<State>();
         fillArray(states);
         printArray(states);
 
         //state.State s1 = new state.State(sn,sc,sf,sb,sp);
     }
 
-    public static String[][] fillArray(String[][] states) {
+    public static ArrayList<State> fillArray(ArrayList<State> states) {
         try {
             Scanner inFile = new Scanner(new File("data/states.txt"));
             while (inFile.hasNext()) {
                 for (int r = 0; r < 51; r++)
                 {
-                    for (int c = 0; c < 5; c++)
-                    {
-                        states[r][c] = inFile.nextLine();
-                    }
+                    State s1 = new State(inFile.nextLine(), inFile.nextLine(), inFile.nextLine(), inFile.nextLine(), Integer.parseInt(inFile.nextLine()));
+                    states.add(s1);
                 }
             }
             inFile.close();
@@ -56,11 +55,12 @@ public class StateDB
         }
         return states;
     }
-    public static void printArray(String[][] states) {
+    public static void printArray(ArrayList states) {
         JTextArea area = new JTextArea();
         //append column headings here
-        String name = ""; String capital = ""; String flower = ""; String bird = ""; int pop = 0;
+        String name = "NAME"; String capital = "CAPITAL"; String flower = "FLOWER"; String bird = "BIRD"; int pop = 0;
         for (String[] s : states) {
+
             //use the formatting notes and the area.append() method
             //to add each states name, capital, flower, bird and population.
         }
