@@ -55,14 +55,19 @@ public class StateDB
         }
         return states;
     }
-    public static void printArray(ArrayList states) {
+    public static void printArray(ArrayList<State> states) {
         JTextArea area = new JTextArea();
-        //append column headings here
-        String name = "NAME"; String capital = "CAPITAL"; String flower = "FLOWER"; String bird = "BIRD"; int pop = 0;
-        for (String[] s : states) {
 
-            //use the formatting notes and the area.append() method
-            //to add each states name, capital, flower, bird and population.
+        //append column headings here
+        String answer = String.format("%-23s %-23s %-30s %-30s %-5s",
+                "STATE NAME", "CAPITAL","FLOWER","BIRD","POPULATION"+"\n\n");
+        area.append(answer);
+        String name = ""; String capital = ""; String flower = ""; String bird = ""; int pop = 0;
+        for (State s : states) {
+            answer = String.format("%-23s %-23s %-30s %-30s %-5s", s.getStateName(), s.getStateCapital(), s.getStateBird(), s.getStateFlower(), s.getStatePopulation() + "\n");
+
+            System.out.println(answer);
+            area.append(answer);
         }
 
         area.setBackground(new Color(255,250,205));

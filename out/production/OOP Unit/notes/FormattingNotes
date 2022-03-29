@@ -1,0 +1,33 @@
+double num = 1.2345;
+		System.out.println(num);
+		String pattern = "###,##0.00";
+		DecimalFormat f = new DecimalFormat(pattern);
+		System.out.println(f.format(num));
+
+
+		String answer = String.format("%-23s %-23s %-30s %-30s %-5s",
+				"STATE NAME", "CAPITAL","FLOWER","BIRD","POPULATION"+"\n\n");
+		area.append(answer);
+		for (int i = 0; i < states.length; i++) {
+			answer = String.format("%-23s %-23s %-30s %-30s %-5s",
+					states[i][0], states[i][1], states[i][2], states[i][3], states[i][4] + "\n");
+			System.out.println(answer);
+			area.append(answer);
+		}
+//		for (int i=0; i<states.length; i++)
+//		{
+//			name = states[i][0]; capital = states[i][1];
+//			flower = states[i][2];
+//			bird = states[i][3]; pop = states[i][4];
+//			while(name.length() < 23)
+//				name+=" ";
+//			while(capital.length() < 23)
+//				capital+=" ";
+//			while(flower.length() < 30)
+//				flower+=" ";
+//			while(bird.length() < 30)
+//				bird+=" ";
+//			while(pop.length() < 25)
+//				pop+=" ";
+//			area.append(name+capital+flower+bird+pop+"\n");
+//		}
