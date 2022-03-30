@@ -80,12 +80,12 @@ public class State implements Comparable<State>
         return ans;
     }
 
-    public boolean equals(Object s) {
-        return stateName.equals(((State)s).getStateName());
-        //return (compareTo((person.Person) o) == 0);
+    public boolean equals(Object o) {
+        return this.compareTo((State)o) == 0;
+
     }
 
-    public int compareTo(State s) {
-        return stateName.compareTo(s.getStateName());
+    public int compareTo(State o) {
+        return this.getStateName().compareToIgnoreCase(o.getStateName());
     }
 }
