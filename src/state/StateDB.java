@@ -1,7 +1,4 @@
 package state;
-
-// Yoav Amit
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -9,55 +6,49 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /********************************************************************
- * Written by: Yoav Amit
- *
- * ASSIGNMENT:  Write a program that reads the data from states.txt
- * into an ArrayList of States. Then modify the print method I've provided,
- * your toString method and the formatting notes in Schoology to print
- * your database
- * Use the answer key I've attached to this assignment.
- *
- * The data in states.txt is in the following order:
- *		state name
- *      state capital
- *		state flower
- *		state bird
- *		state population (I think in 10 thousands)
- *
- * HAND IN:  Let me see your database print on your monitor.
- *
- *
- * ASSIGNMENT: Write a program that writes a new State database program
- * 	using OOP and your State class.
- *
- * Your program should have a menu method that gives the user the following options:
- * 	print, search, add, delete, exit
- *
- * print should print the entire database in the text area we used in your orignial program.
- * search should ask for the name of a state and search for it. If it is found the
- *   information for that state should be printed using the toString() from State.
- * add should ask for the name of the state to be added. If that state is already in the
- *   database you should print a message saying it is already there. Otherwise ask for
- *   the rest of the information and add the state. You database should remain sorted
- *   by state name.
- * delete should ask for the name of the state to be deleted. If the state is in the database
- *   it should be deleted.
- * The user should be able to continue to run your program until they chooses to exit.
- *
- * NOTES:
- * You cannot use 51 as the size of the ArrayList since it will be changing.
- * You can create a dummy state using the name the user inputs, 4 empty Strings and 0.
- * This will be useful in search() & add() although there are other ways to write these
- * two methods.
- * You MUST use this for delete() - most of the delete method can be written using
- * methods from the ArrayList class.
- * You shouldn't print the entire database after add and delete. Your program should
- * go back to the main menu and the user can choose print from there.
- * Your program should be running from your main method but all that should be there
- * is declaring variables, a loop to keep the program going and method calls.
- *
- * HAND IN: after THOROUGHLY testing your program, copy and paste your code to
- * Schoology and submit.
+ Written by: Yoav Amit
+
+ ASSIGNMENT: Write a program that writes a new State database program
+ using OOP and your State class.
+
+ Your program should have a menu method that gives the user the following options:
+ print, search, add, delete, exit
+
+ print should print the entire database in the text area we used in your original program
+ but using the formatting notes instead of loops to space out the columns.
+ search should ask for the name of a state and search for it. If it is found the
+ information for that state should be printed using the toString() from State, otherwise
+ a polite "not found" message should be printed.
+ add should ask for the name of the state to be added. If that state is already in the
+ database you should print a message saying it is already there. Otherwise ask for
+ the rest of the information and add the state. Your database should remain sorted
+ by state name.
+ delete should ask for the name of the state to be deleted. If the state is in the database
+ it should be deleted, otherwise a polite "not found" message should be printed.
+ The user should be able to continue to run your program until they chooses to exit.
+
+ NOTES:
+ You cannot use 51 as the size of the ArrayList since it will be changing.
+ You can create a dummy state using the name the user inputs, 4 empty Strings and 0.
+ This will be useful in search() & add() although there are other ways to write these
+ two methods.
+ You MUST use this for delete() - most of the delete method can be written using
+ methods from the ArrayList class. There should be no loops in your delete method.
+ You shouldn't print the entire database after add and delete. Your program should
+ go back to the main menu and the user can choose print from there.
+ Your program should be running from your main method but all that should be there
+ is declaring variables, a loop to keep the program going and method calls.
+ Look at my answer key to make sure your program works correctly!
+
+
+ HAND IN:
+ FIRST, THOROUGHLY test your program AND have someone else test it and
+ try to crash it!
+ SECOND, make sure your name is in comments at the top of both your State class and
+ your State database programs.
+ THIRD, copy and paste the code for your State class and State database into 2
+ SEPERATE submissions in Schoology.
+
  ********************************************************************/
 
 
@@ -68,9 +59,38 @@ public class StateDB
     {
         ArrayList states = new ArrayList<State>();
         fillArray(states);
-        printArray(states);
 
         //state.State s1 = new state.State(sn,sc,sf,sb,sp);
+
+        int choice;
+        do {
+            choice = menu();
+            switch (choice)
+            {
+                case 0: printArray(states); break;
+                //case 1: searchArray(states); break;
+                //case 2: addArray(states); break;
+                //case 3: deleteArray(states); break;
+                case 4: System.exit(0); break;
+            }
+        } while (choice != 4);
+    }
+
+    public static int menu()
+    {
+        String message = "";
+        message += "What do you want to do?";
+        String[] buttons = {"Print",
+                            "Search",
+                            "Add",
+                            "Delete",
+                            "Quit"};
+
+        int choice = JOptionPane.showOptionDialog
+                (null, message, "Choices",
+                        0, 3, null, buttons, null);
+
+        return choice;
     }
 
     public static ArrayList<State> fillArray(ArrayList<State> states)
@@ -103,7 +123,6 @@ public class StateDB
         for (State s : states) {
             answer = String.format("%-23s %-23s %-30s %-30s %-5s", s.getStateName(), s.getStateCapital(), s.getStateBird(), s.getStateFlower(), s.getStatePopulation() + "\n");
 
-            System.out.println(answer);
             area.append(answer);
         }
 
@@ -117,6 +136,29 @@ public class StateDB
 
         JScrollPane pane = new JScrollPane(area);
         JOptionPane.showMessageDialog(null, pane);
+    }
+
+    public static ArrayList<State> searchArray(ArrayList<State> states)
+    {
+        String state = JOptionPane.showInputDialog("What state would you like to search for?");
+
+        int counter = 0;
+
+        while (counter < states.size() && !states.contains(state)) {
+            counter++;
+        }
+
+        
+
+
+
+
+
+
+
+
+
+        JOptionPane.showMessageDialog(null, message);
     }
 
 
