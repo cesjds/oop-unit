@@ -70,7 +70,7 @@ public class StateDB
             {
                 case 0: printArray(states); break;
                 case 1: searchArray(states); break;
-                //case 2: addArray(states); break;
+                case 2: addArray(states); break;
                 //case 3: deleteArray(states); break;
                 case 4: System.exit(0); break;
             }
@@ -167,5 +167,44 @@ public class StateDB
             message += "Sorry, no data was found";
 
         JOptionPane.showMessageDialog(null, message);
+    }
+
+    public static ArrayList<State> addArray(ArrayList<State> states)
+    {
+        String stateToAdd = JOptionPane.showInputDialog("Enter the name of the state you would like to add");
+
+        int counter = 0;
+        String message = "";
+
+        for (State s : states) {
+            if (s.getStateName().equalsIgnoreCase(stateToAdd)) {
+                message += "Sorry, this state is already in the database";
+                JOptionPane.showMessageDialog(null, message);
+                menu();
+            }
+            counter ++;
+        }
+
+        message = "";
+
+        String capitalToAdd = "";
+        String flowerToAdd = "";
+        String birdToAdd = "";
+        int populationToAdd = 0;
+
+
+        if (counter == states.size()) {
+            capitalToAdd = JOptionPane.showInputDialog("Enter the name of the capital you would like to add");
+            flowerToAdd = JOptionPane.showInputDialog("Enter the name of the flower you would like to add");
+            birdToAdd = JOptionPane.showInputDialog("Enter the name of the bird you would like to add");
+            populationToAdd = Integer.parseInt(JOptionPane.showInputDialog("Enter the population you would like to add"));
+        }
+
+        State s1 = new State(stateToAdd.toUpperCase(), capitalToAdd.toUpperCase(), flowerToAdd.toUpperCase(), birdToAdd.toUpperCase(), populationToAdd);
+        states.add(s1);
+        message += "The state has been added to the database";
+
+        JOptionPane.showMessageDialog(null, message);
+        return states;
     }
 }
