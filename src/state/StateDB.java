@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 /********************************************************************
@@ -68,7 +69,7 @@ public class StateDB
             switch (choice)
             {
                 case 0: printArray(states); break;
-                //case 1: searchArray(states); break;
+                case 1: searchArray(states); break;
                 //case 2: addArray(states); break;
                 //case 3: deleteArray(states); break;
                 case 4: System.exit(0); break;
@@ -138,28 +139,32 @@ public class StateDB
         JOptionPane.showMessageDialog(null, pane);
     }
 
-    public static ArrayList<State> searchArray(ArrayList<State> states)
+    public static void searchArray(ArrayList<State> states)
     {
         String state = JOptionPane.showInputDialog("What state would you like to search for?");
 
         int counter = 0;
 
-        while (counter < states.size() && !states.contains(state)) {
-            counter++;
+//        while (counter < states.size() && !states.contains(state.toUpperCase())) {
+//            counter++;
+//        }
+
+        String message = "";
+
+        for (State s : states) {
+            if (s.getStateName().equalsIgnoreCase(state)) {
+                message += "state name: " + s.getStateName() + "\n";
+                message += "state capital: " + s.getStateCapital() + "\n";
+                message += "state flower: " + s.getStateFlower() + "\n";
+                message += "state bird: " + s.getStateBird() + "\n";
+                message += "state population: " + s.getStatePopulation() + "\n";
+            }
+            counter ++;
         }
 
-        
-
-
-
-
-
-
-
-
+        if (counter == states.size())
+            message += "Sorry, no data was found";
 
         JOptionPane.showMessageDialog(null, message);
     }
-
-
 }
