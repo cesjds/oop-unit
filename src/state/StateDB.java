@@ -158,6 +158,7 @@ public class StateDB
                 message += "state flower: " + s.getStateFlower() + "\n";
                 message += "state bird: " + s.getStateBird() + "\n";
                 message += "state population: " + s.getStatePopulation() + "\n";
+                counter = 0;
             }
             counter ++;
         }
