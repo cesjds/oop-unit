@@ -3,7 +3,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /********************************************************************
@@ -173,6 +174,9 @@ public class StateDB
     {
         String stateToAdd = JOptionPane.showInputDialog("Enter the name of the state you would like to add");
 
+
+
+
         int counter = 0;
         String message = "";
 
@@ -202,6 +206,7 @@ public class StateDB
 
         State s1 = new State(stateToAdd.toUpperCase(), capitalToAdd.toUpperCase(), flowerToAdd.toUpperCase(), birdToAdd.toUpperCase(), populationToAdd);
         states.add(s1);
+        Collections.sort(states);
         message += "The state has been added to the database";
 
         JOptionPane.showMessageDialog(null, message);
@@ -219,10 +224,10 @@ public class StateDB
        if (states.contains(s)) {
            int index = states.indexOf(s);
            states.remove(index);
-           message += "The state has been removed from the database";
+           message += "The state " + stateToRemove.toUpperCase() + " has been successfully removed from the database";
        }
        else {
-           message += "Sorry, this state was not found";
+           message += "Sorry, this state was not found in the database";
        }
 
        JOptionPane.showMessageDialog(null, message);
