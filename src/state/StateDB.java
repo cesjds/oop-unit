@@ -71,7 +71,7 @@ public class StateDB
                 case 0: printArray(states); break;
                 case 1: searchArray(states); break;
                 case 2: addArray(states); break;
-                //case 3: deleteArray(states); break;
+                case 3: deleteArray(states); break;
                 case 4: System.exit(0); break;
             }
         } while (choice != 4);
@@ -207,4 +207,25 @@ public class StateDB
         JOptionPane.showMessageDialog(null, message);
         return states;
     }
+
+   public static ArrayList<State> deleteArray(ArrayList<State> states)
+   {
+       String stateToRemove = JOptionPane.showInputDialog("Enter the name of the state you would like to remove");
+
+       State s = new State(stateToRemove.toUpperCase(), null, null, null, 0);
+
+       String message = "";
+
+       if (states.contains(s)) {
+           int index = states.indexOf(s);
+           states.remove(index);
+           message += "The state has been removed from the database";
+       }
+       else {
+           message += "Sorry, this state was not found";
+       }
+
+       JOptionPane.showMessageDialog(null, message);
+       return states;
+   }
 }
