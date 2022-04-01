@@ -194,16 +194,16 @@ public class StateDB
 
 
         if (counter == states.size()) {
-            capitalToAdd = JOptionPane.showInputDialog("Enter the name of the capital you would like to add");
-            flowerToAdd = JOptionPane.showInputDialog("Enter the name of the flower you would like to add");
-            birdToAdd = JOptionPane.showInputDialog("Enter the name of the bird you would like to add");
-            populationToAdd = Integer.parseInt(JOptionPane.showInputDialog("Enter the population you would like to add"));
+            capitalToAdd = JOptionPane.showInputDialog("Enter the name of the CAPITAL");
+            flowerToAdd = JOptionPane.showInputDialog("Enter the name of the FLOWER");
+            birdToAdd = JOptionPane.showInputDialog("Enter the name of the BIRD");
+            populationToAdd = Integer.parseInt(JOptionPane.showInputDialog("Enter the POPULATION"));
         }
 
         State s1 = new State(stateToAdd.toUpperCase(), capitalToAdd.toUpperCase(), flowerToAdd.toUpperCase(), birdToAdd.toUpperCase(), populationToAdd);
         states.add(s1);
         Collections.sort(states);
-        message += "The state has been added to the database";
+        message += "The state has been succesfuly added to the database!";
 
         JOptionPane.showMessageDialog(null, message);
         return states;
