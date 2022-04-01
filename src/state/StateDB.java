@@ -145,27 +145,23 @@ public class StateDB
         String state = JOptionPane.showInputDialog("What state would you like to search for?");
 
         int counter = 0;
-
-//        while (counter < states.size() && !states.contains(state.toUpperCase())) {
-//            counter++;
-//        }
-
         String message = "";
 
-        for (State s : states) {
-            if (s.getStateName().equalsIgnoreCase(state)) {
-                message += "state name: " + s.getStateName() + "\n";
-                message += "state capital: " + s.getStateCapital() + "\n";
-                message += "state flower: " + s.getStateFlower() + "\n";
-                message += "state bird: " + s.getStateBird() + "\n";
-                message += "state population: " + s.getStatePopulation() + "\n";
-                counter = 0;
-            }
+        State s = new State(state.toUpperCase(), null, null, null, 0);
+
+        while (!states.contains(s) && counter < states.size())
             counter ++;
-        }
 
         if (counter == states.size())
-            message += "Sorry, no data was found";
+            message += "Sorry, the state was not found in the database";
+        else {
+            int index = states.indexOf(s);
+            message += "state name: " + s.getStateName() + "\n";
+            message += "state capital: " + states.get(states.indexOf(s)).getStateCapital() + "\n";
+            message += "state flower: " + states.get(states.indexOf(s)).getStateFlower() + "\n";
+            message += "state bird: " + states.get(states.indexOf(s)).getStateBird() + "\n";
+            message += "state population: " + states.get(states.indexOf(s)).getStatePopulation() + "\n";
+        }
 
         JOptionPane.showMessageDialog(null, message);
     }
