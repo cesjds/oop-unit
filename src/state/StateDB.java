@@ -62,8 +62,6 @@ public class StateDB
         ArrayList states = new ArrayList<State>();
         fillArray(states);
 
-        //state.State s1 = new state.State(sn,sc,sf,sb,sp);
-
         int choice;
         do {
             choice = menu();
@@ -170,42 +168,33 @@ public class StateDB
     {
         String stateToAdd = JOptionPane.showInputDialog("Enter the name of the state you would like to add");
 
-
-
-
         int counter = 0;
         String message = "";
-
-        for (State s : states) {
-            if (s.getStateName().equalsIgnoreCase(stateToAdd)) {
-                message += "Sorry, this state is already in the database";
-                JOptionPane.showMessageDialog(null, message);
-                menu();
-            }
-            counter ++;
-        }
-
-        message = "";
 
         String capitalToAdd = "";
         String flowerToAdd = "";
         String birdToAdd = "";
         int populationToAdd = 0;
 
+        State s = new State(stateToAdd.toUpperCase(), null, null, null, 0);
 
-        if (counter == states.size()) {
+        if (states.contains(s)) {
+            int index = states.indexOf(s);
+            message += "Sorry, this state is already in the database";
+            JOptionPane.showMessageDialog(null, message);
+        }
+        else {
             capitalToAdd = JOptionPane.showInputDialog("Enter the name of the CAPITAL");
             flowerToAdd = JOptionPane.showInputDialog("Enter the name of the FLOWER");
             birdToAdd = JOptionPane.showInputDialog("Enter the name of the BIRD");
             populationToAdd = Integer.parseInt(JOptionPane.showInputDialog("Enter the POPULATION"));
+            State s1 = new State(stateToAdd.toUpperCase(), capitalToAdd.toUpperCase(), flowerToAdd.toUpperCase(), birdToAdd.toUpperCase(), populationToAdd);
+            states.add(s1);
+            Collections.sort(states);
+            message += "The state has been succesfuly added to the database!";
+            JOptionPane.showMessageDialog(null, message);
         }
 
-        State s1 = new State(stateToAdd.toUpperCase(), capitalToAdd.toUpperCase(), flowerToAdd.toUpperCase(), birdToAdd.toUpperCase(), populationToAdd);
-        states.add(s1);
-        Collections.sort(states);
-        message += "The state has been succesfuly added to the database!";
-
-        JOptionPane.showMessageDialog(null, message);
         return states;
     }
 
