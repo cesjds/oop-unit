@@ -75,8 +75,14 @@ public class State implements Comparable<State>
     }
 
     public String toString() {
-        String ans = "state.State Name: " + stateName + ", state.State Capital: " + stateCapital + ", state.State Flower: " +
-                stateFlower + ", state.State Bird: " + stateBird + ", state.State Population: " + statePopulation + "\n";
+//        String ans = "state.State Name: " + stateName + ", state.State Capital: " + stateCapital + ", state.State Flower: " +
+//                stateFlower + ", state.State Bird: " + stateBird + ", state.State Population: " + statePopulation + "\n";
+        String ans =
+                "Name: " + stateName + "\n" +
+                "Capital: " + stateCapital + "\n" +
+                "Flower: " + stateFlower + "\n" +
+                "Bird: " + stateBird + "\n" +
+                "Population: " + statePopulation;
         return ans;
     }
 
