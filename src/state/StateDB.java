@@ -53,8 +53,6 @@ import java.util.Scanner;
 
  ********************************************************************/
 
-
-
 public class StateDB
 {
     public static void main(String[] args)
@@ -154,11 +152,8 @@ public class StateDB
             message += "Sorry, the state was not found in the database";
         else {
             int index = states.indexOf(s);
-            message += "state name: " + s.getStateName() + "\n";
-            message += "state capital: " + states.get(states.indexOf(s)).getStateCapital() + "\n";
-            message += "state flower: " + states.get(states.indexOf(s)).getStateFlower() + "\n";
-            message += "state bird: " + states.get(states.indexOf(s)).getStateBird() + "\n";
-            message += "state population: " + states.get(states.indexOf(s)).getStatePopulation() + "\n";
+            State printState = new State(states.get(counter).getStateName(), states.get(counter).getStateCapital(), states.get(counter).getStateFlower(), states.get(counter).getStateBird(), states.get(counter).getStatePopulation());
+            message += "Here is the information: " + "\n\n" + printState.toString();
         }
 
         JOptionPane.showMessageDialog(null, message);
@@ -168,7 +163,6 @@ public class StateDB
     {
         String stateToAdd = JOptionPane.showInputDialog("Enter the name of the state you would like to add");
 
-        int counter = 0;
         String message = "";
 
         String capitalToAdd = "";
@@ -179,7 +173,6 @@ public class StateDB
         State s = new State(stateToAdd.toUpperCase(), null, null, null, 0);
 
         if (states.contains(s)) {
-            int index = states.indexOf(s);
             message += "Sorry, this state is already in the database";
             JOptionPane.showMessageDialog(null, message);
         }
