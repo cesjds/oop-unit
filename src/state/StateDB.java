@@ -145,15 +145,14 @@ public class StateDB
 
         State s = new State(state.toUpperCase(), null, null, null, 0);
 
-        while (!states.contains(s) && counter < states.size())
+        while (counter < states.size() && !(s.equals(states.get(counter))))
             counter ++;
 
         if (counter == states.size())
             message += "Sorry, the state was not found in the database";
         else {
             int index = states.indexOf(s);
-            State printState = new State(states.get(counter).getStateName(), states.get(counter).getStateCapital(), states.get(counter).getStateFlower(), states.get(counter).getStateBird(), states.get(counter).getStatePopulation());
-            message += "Here is the information: " + "\n\n" + printState.toString();
+            message += "Here is the information: " + "\n\n" + states.get(counter).toString();
         }
 
         JOptionPane.showMessageDialog(null, message);
