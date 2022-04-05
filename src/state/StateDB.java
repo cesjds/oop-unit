@@ -114,12 +114,12 @@ public class StateDB
         JTextArea area = new JTextArea();
 
         //append column headings here
-        String answer = String.format("%-23s %-23s %-30s %-30s %-5s",
+        String answer = String.format("%-23s %-23s %-30s %-30s %s",
                 "STATE NAME", "CAPITAL","FLOWER","BIRD","POPULATION"+"\n\n");
         area.append(answer);
         String name = ""; String capital = ""; String flower = ""; String bird = ""; int pop = 0;
         for (State s : states) {
-            answer = String.format("%-23s %-23s %-30s %-30s %-5s", s.getStateName(), s.getStateCapital(), s.getStateBird(), s.getStateFlower(), s.getStatePopulation() + "\n");
+            answer = String.format("%-23s %-23s %-30s %-30s %s", s.getStateName(), s.getStateCapital(), s.getStateBird(), s.getStateFlower(), s.getStatePopulation() + "\n");
 
             area.append(answer);
         }
