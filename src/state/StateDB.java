@@ -149,7 +149,7 @@ public class StateDB
             counter ++;
 
         if (counter == states.size())
-            message += "Sorry, the state was not found in the database";
+            message += "Sorry, the state " + state.toUpperCase() + " was not found in the database";
         else {
             int index = states.indexOf(s);
             message += "Here is the information: " + "\n\n" + states.get(counter).toString();
@@ -183,7 +183,7 @@ public class StateDB
             State s1 = new State(stateToAdd.toUpperCase(), capitalToAdd.toUpperCase(), flowerToAdd.toUpperCase(), birdToAdd.toUpperCase(), populationToAdd);
             states.add(s1);
             Collections.sort(states);
-            message += "The state has been succesfuly added to the database!";
+            message += "The state " + stateToAdd.toUpperCase() + " has been succesfuly added to the database!";
             JOptionPane.showMessageDialog(null, message);
         }
 
@@ -204,7 +204,7 @@ public class StateDB
            message += "The state " + stateToRemove.toUpperCase() + " has been successfully removed from the database";
        }
        else {
-           message += "Sorry, this state was not found in the database";
+           message += "Sorry, " + stateToRemove.toUpperCase() + " this state was not found in the database";
        }
 
        JOptionPane.showMessageDialog(null, message);
