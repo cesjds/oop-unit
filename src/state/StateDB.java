@@ -115,7 +115,7 @@ public class StateDB
 
         //append column headings here
         String answer = String.format("%-23s %-23s %-30s %-30s %s",
-                "STATE NAME", "CAPITAL","FLOWER","BIRD","POPULATION"+"\n\n");
+                "STATE NAME", "CAPITAL","BIRD","FLOWER","POPULATION"+"\n\n");
         area.append(answer);
         String name = ""; String capital = ""; String flower = ""; String bird = ""; int pop = 0;
         for (State s : states) {
