@@ -204,7 +204,7 @@ public class StateDB
            message += "The state " + stateToRemove.toUpperCase() + " has been successfully removed from the database";
        }
        else {
-           message += "Sorry, " + stateToRemove.toUpperCase() + " this state was not found in the database";
+           message += "Sorry, " + stateToRemove.toUpperCase() + " was not found in the database";
        }
 
        JOptionPane.showMessageDialog(null, message);
