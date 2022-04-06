@@ -3,7 +3,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://java.com)
 
 [![forthebadge](assets/made-in-computer-programming-ii-adv.svg)](https://cesjds.org)
-
 [![forthebadge](assets/at-cesjds.svg)](https://cesjds.org)
 
 ## What is OOP?
